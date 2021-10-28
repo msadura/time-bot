@@ -13,5 +13,5 @@ export async function connectProvider() {
 }
 
 export function getProvider() {
-  return provider as ethers.providers.Provider
+  return provider as ethers.providers.Provider;
 }
