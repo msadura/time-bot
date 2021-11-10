@@ -6,12 +6,13 @@ let httpWallet: ethers.Wallet;
 
 export async function connectWallet(): Promise<void> {
   if (!MNEMONIC) {
-    throw 'Mnemonic not set. Cannot connect wallet.';
+    console.log('🔥', 'Mnemonic not detected. App will not be able to sign txs.');
+    return;
   }
 
   const wallet = ethers.Wallet.fromMnemonic(MNEMONIC);
 
-  console.info('🔥','Connecting wallet...');
+  console.info('🔥', 'Connecting wallet...');
 
   try {
     const httpProvider = getProvider();

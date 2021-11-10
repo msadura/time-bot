@@ -4,14 +4,10 @@ dotenv.config();
 
 import { connectProvider } from '@app/blockchain/provider';
 import { connectWallet } from '@app/blockchain/wallet';
-import { BondType, Discount } from '@app/time/types';
-import getBondDiscount from '@app/time/getBondDiscount';
+import { Discount } from '@app/time/types';
 import getDiscounts from '@app/time/getDiscounts';
-
-const PORT = process.env.PORT || 3002;
-
-const INTERVAL_RATE = 30000; //ms
-const MIN_ALERT_DISCOUNT = 9.0; //%
+import { initDiscord, sendMessage } from '@app/discord';
+import { INTERVAL_RATE, MIN_ALERT_DISCOUNT } from '@app/constants';
 
 async function main() {
   await connectProvider();
@@ -32,24 +28,28 @@ async function main() {
       }
     });
 
-    console.log('🔥', discountsToAlert);
-
     if (discountsToAlert.length > 0) {
-      // Trigger discord / mail alert
+      sendMessage(
+        '--- 🔥 Time discounts alert 🔥 ---' +
+          discountsToAlert.map(d => `\n     ${d.bond} - ${d.discount?.toFixed(2)}%`) +
+          '\n------ <@here>'
+      );
     }
   };
 
   // Uncomment to log all discounts
   // setInterval(logDiscounts, INTERVAL_RATE);
-
+  // logDiscounts();
   // Uncomment to log / trigger discounts above MIN_ALERT_DISCOUNT treshold
   setInterval(alertDiscounts, INTERVAL_RATE);
-  alertDiscounts();
+  // alertDiscounts();
 
   // const app = express();
   // app.listen(PORT, () => {
   //   console.log(`[ server ] ready on port ${PORT}`);
   // });
+
+  initDiscord();
 }
 
 main();
