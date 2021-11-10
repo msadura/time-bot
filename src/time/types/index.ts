@@ -1,4 +1,3 @@
-import { ethers } from 'ethers';
 export enum BondType {
   timeAvax = 'timeAvax',
   timeMim = 'timeMim',
@@ -20,3 +19,8 @@ export enum PriceType {
   buy = 'buy',
   sell = 'sell'
 }
+
+export type Discount = {
+  bond: BondType;
+  discount: number | undefined;
+};

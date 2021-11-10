@@ -1,10 +1,9 @@
-import { BondType } from '@app/time/types';
+import { BondType, TokenPrice } from '@app/time/types';
 import { getTimePrice } from '@app/time/getTimePrice';
 import { getBondPrice } from '@app/time/getBondPrice';
-import { ethers } from 'ethers';
 
-export default async function getBondDiscount(bond: BondType) {
-  const tokenPrice = await getTimePrice();
+export default async function getBondDiscount(bond: BondType, timePrice: TokenPrice | null) {
+  const tokenPrice = timePrice || (await getTimePrice());
   const bondPrice = await getBondPrice(bond);
   let discount: number | null = null;
 
