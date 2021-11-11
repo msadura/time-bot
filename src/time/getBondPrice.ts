@@ -9,10 +9,10 @@ export async function getBondPrice(bond: BondType) {
   try {
     const priceUSD = await contract.bondPriceInUSD();
 
-    console.log(
-      `🔥 bond ${bond} price ${bond === BondType.timeAvax ? 'AVAX' : 'USD'}: `,
-      ethers.utils.formatUnits(priceUSD as ethers.BigNumber, 'ether')
-    );
+    // console.log(
+    //   `🔥 bond ${bond} price ${bond === BondType.timeAvax ? 'AVAX' : 'USD'}: `,
+    //   ethers.utils.formatUnits(priceUSD as ethers.BigNumber, 'ether')
+    // );
 
     return Number(ethers.utils.formatUnits(priceUSD as ethers.BigNumber, 'ether'));
   } catch (e) {

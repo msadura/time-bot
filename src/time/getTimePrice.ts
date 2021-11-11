@@ -20,14 +20,14 @@ export async function getTimePrice(
       USDT.address
     ]);
 
-    console.log(
-      '🔥 $time price AVAX: ',
-      ethers.utils.formatUnits(out[1] as ethers.BigNumber, WAVAX.decimals)
-    );
-    console.log(
-      '🔥 $time price USD: ',
-      ethers.utils.formatUnits(out[2] as ethers.BigNumber, USDT.decimals)
-    );
+    // console.log(
+    //   '🔥 $time price AVAX: ',
+    //   ethers.utils.formatUnits(out[1] as ethers.BigNumber, WAVAX.decimals)
+    // );
+    // console.log(
+    //   '🔥 $time price USD: ',
+    //   ethers.utils.formatUnits(out[2] as ethers.BigNumber, USDT.decimals)
+    // );
 
     return {
       avax: Number(ethers.utils.formatUnits(out[1] as ethers.BigNumber, WAVAX.decimals)),
