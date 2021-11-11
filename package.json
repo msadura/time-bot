@@ -14,7 +14,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "start": "ts-node src/index.ts ",
+    "start": "node lib/index.js",
+    "start-ts": "ts-node src/index.ts ",
     "dev": "nodemon src/index.ts",
     "dev-inspect": "nodemon --inspect-brk=9229 src/index.ts",
     "build": "tsc --noEmit false"
