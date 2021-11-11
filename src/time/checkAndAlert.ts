@@ -9,7 +9,7 @@ export default async function checkAndAlert() {
   const discounts = await getDiscounts();
   const discountsToAlert: Discount[] = [];
 
-  console.log('🔥', discounts);
+  // console.log('🔥', discounts);
 
   discounts.forEach(d => {
     if (d.discount && d.discount > MIN_ALERT_DISCOUNT) {
