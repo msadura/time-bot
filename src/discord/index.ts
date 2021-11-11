@@ -1,4 +1,9 @@
-import { DISCORD_BOT_TOKEN, DISCORD_CHANNEL_ID } from '@app/constants';
+import {
+  DISCORD_BOT_TOKEN,
+  DISCORD_CHANNEL_ID,
+  INTERVAL_RATE,
+  MIN_ALERT_DISCOUNT
+} from '@app/constants';
 import { Client } from 'discord.js';
 
 const client = new Client();
@@ -8,11 +13,11 @@ export async function initDiscord() {
   client.once('ready', () => {
     isReady = true;
 
-    //     sendMessage(`
-    // --- Time alert server connected ---
-    //      Check interval: ${INTERVAL_RATE / 1000}s
-    //      Minimum discount threshold: ${MIN_ALERT_DISCOUNT}%
-    // --- GL ---`);
+    sendMessage(`
+    --- Time alert server connected ---
+         Check interval: ${INTERVAL_RATE / 1000}s
+         Minimum discount threshold: ${MIN_ALERT_DISCOUNT}%
+    --- GL ---`);
   });
 
   client.login(DISCORD_BOT_TOKEN);
