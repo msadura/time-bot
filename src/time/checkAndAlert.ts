@@ -30,7 +30,7 @@ export default async function checkAndAlert() {
     sendMessage(
       '--- 🔥 Time discounts alert 🔥 ---' +
         discountsToAlert.map(d => `\n     ${d.bond} - ${d.discount?.toFixed(2)}%`) +
-        '\n------ @here'
+        '\n------ @everyone'
     );
   }
 
