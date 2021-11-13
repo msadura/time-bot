@@ -10,6 +10,7 @@ let prevAlert: number | null = null;
 
 export default async function checkAndAlert() {
   if (prevAlert && Date.now() - prevAlert < COOLDOWN_TIME) {
+    console.log('🔥', 'cooldown');
     return;
   }
 
