@@ -14,8 +14,8 @@ async function main() {
   await connectWallet();
 
   // Uncomment to log / trigger discounts above MIN_ALERT_DISCOUNT treshold
-  // setInterval(checkAndAlert, INTERVAL_RATE);
-  // initDiscord();
+  setInterval(checkAndAlert, INTERVAL_RATE);
+  initDiscord();
 
   autoRedeem();
 }
