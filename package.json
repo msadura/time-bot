@@ -6,6 +6,9 @@
   "homepage": "",
   "license": "MIT",
   "main": "lib/index.js",
+  "engines": {
+    "node": ">=14.18.1"
+  },
   "directories": {
     "lib": "lib"
   },
