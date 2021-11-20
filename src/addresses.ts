@@ -8,3 +8,5 @@ export const BONDS: { [key in keyof typeof BondType]: string } = {
   [BondType.wavax]: '0xE02B1AA2c4BE73093BE79d763fdFFC0E3cf67318',
   [BondType.mim]: '0x694738E0A438d90487b4a549b201142c1a97B556'
 };
+
+export const STAKING_ADDRESS = '0x4456b87af11e87e329ab7d7c7a246ed1ac2168b9';
