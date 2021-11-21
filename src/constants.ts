@@ -6,4 +6,4 @@ export const DISCORD_CHANNEL_ID = process.env.DISCORD_CHANNEL_ID as string;
 export const INTERVAL_RATE = 30000; //ms
 export const MIN_ALERT_DISCOUNT = 9; //%
 
-export const REDEEM_TRIGGER = 10 * 60 * 1000; //10 min
+export const REDEEM_TRIGGER = 15 * 60 * 1000; //15 min

@@ -10,3 +10,6 @@ export const BONDS: { [key in keyof typeof BondType]: string } = {
 };
 
 export const STAKING_ADDRESS = '0x4456b87af11e87e329ab7d7c7a246ed1ac2168b9';
+
+// Your wallet with bonds
+export const REDEEM_ADDRESS = process.env.REDEEM_ADDRESS;
